@@ -1,0 +1,9 @@
+# rust
+/target
+/Cargo.lock
+
+# trunk
+/dist
+
+# tailwind
+/assets/tailwind_output.css
