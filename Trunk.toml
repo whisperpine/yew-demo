@@ -2,12 +2,6 @@
 # The public URL from which assets are to be served.
 public_url = "/"
 
-[watch]
-# Paths to watch. The `build.target`'s parent folder is watched by default.
-watch = []
-# Paths to ignore.
-ignore = []
-
 [serve]
 # The address to serve on.
 address = "127.0.0.1"
@@ -18,7 +12,8 @@ open = true
 # Disable auto-reload of the web app.
 no_autoreload = false
 
+# 在 pre_build 阶段执行 "sh ./build.sh" 命令
 [[hooks]]
 stage = "pre_build"
-command = "bash"
+command = "sh"
 command_arguments = ["./build.sh"]

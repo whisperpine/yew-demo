@@ -2,6 +2,10 @@
     "cSpell.words": [
         "onclick"
     ],
-    "css.lint.unknownAtRules": "ignore",
-    "scss.lint.unknownAtRules": "ignore",
+    "tailwindCSS.includeLanguages": {
+        "rust": "html"
+    },
+    "files.associations": {
+        "*.css": "tailwindcss",
+    },
 }

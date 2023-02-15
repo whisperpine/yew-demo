@@ -1,14 +1,20 @@
 [package]
-name = "yew_app"
+name = "yew_demo"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-web-sys = "0.3"
-yew = { version = "0.20", features = ["csr"] }
+web-sys = "0.3.61"
+yew = { version = "0.20.0", features = ["csr"] }
 
 [profile.release]
+# less code to include into binary
+panic = "abort"
+# optimization over all codebase ( better optimization, slower build )
+codegen-units = 1
+# link time optimization using using whole-program analysis
 lto = true
+# optimization for size
 opt-level = "s"
