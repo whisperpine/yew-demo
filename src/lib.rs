@@ -1,40 +1,8 @@
+use std::rc::Rc;
 use yew::prelude::*;
 
-pub struct Yahaha;
-
-impl Component for Yahaha {
-    type Message = ();
-    type Properties = ();
-
-    fn create(_ctx: &Context<Self>) -> Self {
-        Self
-    }
-
-    fn view(&self, _ctx: &Context<Self>) -> Html {
-        html! {
-            <p class="text-red-500">{ "yahaha" }</p>
-        }
-    }
-}
-
 #[derive(PartialEq, Properties)]
-pub struct GreetBtnProps {
-    pub name: AttrValue,
-    pub cb: Callback<AttrValue>,
-}
-
-#[function_component]
-pub fn GreetBtn(props: &GreetBtnProps) -> Html {
-    let GreetBtnProps { name, cb } = props;
-    cb.emit(name.clone());
-
-    html! {
-        <button></button>
-    }
-}
-
-#[derive(PartialEq, Properties)]
-pub struct NiceProps {
+pub struct DemoSpanProps {
     #[prop_or_default]
     pub is_loading: bool,
     #[prop_or(AttrValue::from("amiao"))]
@@ -42,9 +10,70 @@ pub struct NiceProps {
 }
 
 #[function_component]
-pub fn Nice(props: &NiceProps) -> Html {
-    let NiceProps { is_loading, name } = props;
+pub fn DemoSpan(props: &DemoSpanProps) -> Html {
+    let DemoSpanProps { is_loading, name } = props;
     html! {
-        <div class="text-yellow-600">{"Am I loading? - "}{is_loading}{" - "}{name}</div>
+        <span class="text-yellow-600">
+            {"Am I loading? - "}{is_loading}{" - "}{name}
+            <br/>
+        </span>
+    }
+}
+
+#[derive(PartialEq, Properties, Clone)]
+pub struct ListItemProps {
+    #[prop_or(AttrValue::from("nice"))]
+    value: AttrValue,
+}
+
+#[function_component]
+pub fn ListItem(props: &ListItemProps) -> Html {
+    html! {
+        <li>{props.value.clone()}</li>
+    }
+}
+
+#[derive(PartialEq, Properties)]
+pub struct DemoTableProps {
+    pub children: ChildrenWithProps<ListItem>,
+}
+
+#[function_component]
+pub fn DemoTable(props: &DemoTableProps) -> Html {
+    // modify children's property
+    let modified_children = props.children.iter().map(|mut item| {
+        let mut list_props = Rc::make_mut(&mut item.props);
+        list_props.value = AttrValue::from(format!("item-{}", list_props.value));
+        item
+    });
+
+    html! {
+        <table>
+            {for modified_children}
+        </table>
+    }
+}
+
+#[derive(Clone, PartialEq, Debug)]
+pub struct Theme {
+    pub foreground: String,
+    pub background: String,
+}
+
+impl Default for Theme {
+    fn default() -> Self {
+        Self {
+            foreground: String::from("foreground"),
+            background: String::from("background"),
+        }
+    }
+}
+
+#[function_component]
+pub fn NavButton() -> Html {
+    let theme = use_context::<Rc<Theme>>().unwrap();
+
+    html! {
+        <button class="text-5xl rounded shadow p-10">{theme.foreground.clone()}</button>
     }
 }
