@@ -3,6 +3,10 @@ use yew::prelude::*;
 use yew::props;
 use yew_demo::*;
 
+// set mimalloc as heap memory allocator
+// #[global_allocator]
+// static GLOBAL: mimalloc::MiMalloc = mimalloc::MiMalloc;
+
 fn main() {
     yew::Renderer::<App>::new().render();
 }

@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
+        "mimalloc",
         "onclick"
     ],
     "tailwindCSS.includeLanguages": {
@@ -8,4 +9,5 @@
     "files.associations": {
         "*.css": "tailwindcss",
     },
+    "codesnap.showWindowTitle": true
 }

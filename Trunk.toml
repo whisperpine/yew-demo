@@ -12,8 +12,14 @@ open = true
 # Disable auto-reload of the web app.
 no_autoreload = false
 
-# 在 pre_build 阶段执行 "sh ./build.sh" 命令
+# 在 pre_build 阶段执行 "sh .shell/pre_build.sh" 命令
 [[hooks]]
 stage = "pre_build"
 command = "sh"
-command_arguments = ["./build.sh"]
+command_arguments = [".shell/pre_build.sh"]
+
+# 在 post_build 阶段执行 "sh .shell/post_build.sh" 命令
+[[hooks]]
+stage = "post_build"
+command = "sh"
+command_arguments = [".shell/post_build.sh"]

@@ -7,3 +7,6 @@
 
 # tailwind
 /assets/tailwind_output.css
+
+# wasm-pack
+/pkg

@@ -1,0 +1,4 @@
+/target
+/dist
+/assets/tailwind_input.css
+Cargo.lock
