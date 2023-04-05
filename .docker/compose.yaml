@@ -1,7 +1,0 @@
-# use this file for release
-
-services:
-  yew_demo:
-    image: whisperpine/yew_demo:latest
-    ports:
-      - 80:8080

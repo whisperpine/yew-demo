@@ -21,4 +21,3 @@ opt-level = "s"
 [dependencies]
 web-sys = "0.3.61"
 yew = { version = "0.20.0", features = ["csr"] }
-# mimalloc = { version = "0.1.36", default-features = false }
