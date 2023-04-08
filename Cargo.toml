@@ -9,14 +9,11 @@ edition = "2021"
 path = "src/lib.rs"
 
 [profile.release]
-# less code to include into binary
-panic = "abort"
-# optimization over all codebase ( better optimization, slower build )
-codegen-units = 1
-# link time optimization using using whole-program analysis
-lto = true
-# optimization for size
-opt-level = "s"
+panic = "abort"   # abort unwinding on panic
+codegen-units = 1 # better optimization, slower build
+lto = true        # enable link time optimization
+opt-level = "z"   # optimize for size
+strip = true      # strip symbols from the binary
 
 [dependencies]
 web-sys = "0.3.61"
