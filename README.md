@@ -13,24 +13,40 @@ rustup target add wasm32-unknown-unknown
 ### Trunk
 [Trunk](https://trunkrs.dev/) is a WASM web application bundler for Rust.
 ```sh
-cargo install --locked trunk    # install trunk
-trunk --help        # check if successfully installed
+cargo install --locked trunk  # install trunk
+trunk --help  # check if successfully installed
+```
+
+### pnpm
+[pnpm](https://pnpm.io/) is highly recommended as a replacement of [npm](https://www.npmjs.com/).
+
+## Dependencies
+
+```sh
+pnpm install  # install dependencies specified in package.json
 ```
 
 ### TailwindCSS
+
 [TailwindCSS](https://tailwindcss.com/) is a utility-first CSS framework and the CLI is used for css generation.
+
 ```sh
-npm install -g tailwindcss      # install tailwind CLI
-tailwindcss --help  # check if successfully installed
+# check if tailwindcss has been successfully installed
+pnpm exec tailwindcss --help
 ```
 
 ### Binaryen
+
 [Binaryen](https://github.com/WebAssembly/binaryen) contains optimizer and toolchain for WebAssembly.
 
-Download executables in the [release page](https://github.com/WebAssembly/binaryen/releases).
+```sh
+# check if binaryen has been successfully installed
+pnpm exec wasm-opt --help
+```
 
-Append decompressed binaryen-xxx/bin directory to `PATH` environment variable.
+## Getting Started
 
 ```sh
-wasm-opt --help     # make sure this command is available
+trunk serve  # build debug version and serve locally with hot reload
+trunk build --release  # build release version
 ```
