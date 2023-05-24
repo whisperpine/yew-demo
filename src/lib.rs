@@ -23,7 +23,7 @@ pub fn DemoSpan(props: &DemoSpanProps) -> Html {
 #[derive(PartialEq, Properties, Clone)]
 pub struct ListItemProps {
     #[prop_or(AttrValue::from("nice"))]
-    value: AttrValue,
+    pub value: AttrValue,
 }
 
 #[function_component]
@@ -75,5 +75,29 @@ pub fn NavButton() -> Html {
 
     html! {
         <button class="text-5xl rounded shadow p-10">{theme.foreground.clone()}</button>
+    }
+}
+
+#[function_component]
+pub fn NotFound() -> Html {
+    html! {
+        <div>
+            <h1>{ "404 NOT FOUND" }</h1>
+        </div>
+    }
+}
+
+#[derive(PartialEq, Properties)]
+pub struct NewsProps {
+    pub id: u8,
+}
+
+#[function_component]
+pub fn News(props: &NewsProps) -> Html {
+    let NewsProps { id } = props;
+    html! {
+        <div>
+            <h1 class="text-lg">{ "News ID: " } {id}</h1>
+        </div>
     }
 }

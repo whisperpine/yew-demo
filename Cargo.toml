@@ -13,8 +13,8 @@ panic = "abort"   # abort unwinding on panic
 codegen-units = 1 # better optimization, slower build
 lto = true        # enable link time optimization
 opt-level = "z"   # optimize for size
-strip = true      # strip symbols from the binary
 
 [dependencies]
-web-sys = "0.3.61"
+web-sys = "0.3.62"
 yew = { version = "0.20.0", features = ["csr"] }
+yew-router = "0.17.0"
