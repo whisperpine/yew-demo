@@ -18,8 +18,8 @@ stage = "pre_build"
 command = "sh"
 command_arguments = [".shell/pre_build.sh"]
 
-# 在 post_build 阶段执行 "sh .shell/post_build.sh" 命令
-[[hooks]]
-stage = "post_build"
-command = "sh"
-command_arguments = [".shell/post_build.sh"]
+# # 在 post_build 阶段执行 "sh .shell/post_build.sh" 命令
+# [[hooks]]
+# stage = "post_build"
+# command = "sh"
+# command_arguments = [".shell/post_build.sh"]

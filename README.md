@@ -50,3 +50,7 @@ pnpm exec wasm-opt --help
 trunk serve  # build debug version and serve locally with hot reload
 trunk build --release  # build release version
 ```
+
+## Todo
+
+- [ ] apply trunk post hook only when build release version.
