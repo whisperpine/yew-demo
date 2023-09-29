@@ -17,13 +17,15 @@ pub fn Home() -> Html {
         web_sys::console::log_1(&"hello".into());
     });
 
-    let theme = use_memo(
-        |_| crate::Theme {
-            foreground: "yellow".to_owned(),
-            background: "pink".to_owned(),
-        },
-        (),
-    );
+    let theme = use_memo((), |_| crate::Theme {
+        foreground: "yellow".to_owned(),
+        background: "pink".to_owned(),
+    });
+
+    // let theme = crate::Theme {
+    //     foreground: "yellow".to_owned(),
+    //     background: "pink".to_owned(),
+    // };
 
     html! {
         <div class="">

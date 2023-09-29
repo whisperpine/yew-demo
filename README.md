@@ -1,23 +1,28 @@
 # README
 
-Rust wasm demo project with [Yew](https://yew.rs/), [Trunk](https://trunkrs.dev/) and [TailwindCSS](https://tailwindcss.com/).
+Rust wasm demo project built with [Yew](https://yew.rs/), [Trunk](https://trunkrs.dev/) and [TailwindCSS](https://tailwindcss.com/).
 
 ## Prerequisites
 
 ### Rust Target
+
 Add build support for WebAssembly platform.
+
 ```sh
 rustup target add wasm32-unknown-unknown
 ```
 
 ### Trunk
+
 [Trunk](https://trunkrs.dev/) is a WASM web application bundler for Rust.
+
 ```sh
 cargo install --locked trunk  # install trunk
 trunk --help  # check if successfully installed
 ```
 
 ### pnpm
+
 [pnpm](https://pnpm.io/) is highly recommended as a replacement of [npm](https://www.npmjs.com/).
 
 ## Dependencies

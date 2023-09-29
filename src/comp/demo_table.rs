@@ -23,7 +23,7 @@ pub fn DemoTable(props: &DemoTableProps) -> Html {
     use std::rc::Rc;
     // modify children's property
     let modified_children = props.children.iter().map(|mut item| {
-        let mut list_props = Rc::make_mut(&mut item.props);
+        let list_props = Rc::make_mut(&mut item.props);
         list_props.value = AttrValue::from(format!("item-{}", list_props.value));
         item
     });
