@@ -1,18 +1,23 @@
 {
     "files.readonlyInclude": {
+        "LICENSE-MIT": true,
+        "LICENSE-APACHE": true,
+        "target/**": true,
         "dist/**/*": true,
         "node_modules/**/*": true,
     },
-    "cSpell.words": [
-        "binaryen",
-        "mimalloc",
-        "onclick"
-    ],
     "tailwindCSS.includeLanguages": {
         "rust": "html"
     },
     "files.associations": {
         "*.css": "tailwindcss",
+        "LICENSE-MIT": "plain text",
+        "LICENSE-APACHE": "plain text"
     },
     "codesnap.showWindowTitle": true,
+    "cSpell.words": [
+        "binaryen",
+        "mimalloc",
+        "onclick"
+    ],
 }
